@@ -8,6 +8,8 @@ services:
       - POSTGRES_USER=${POSTGRES_USER:-zabbix_user}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-zabbix_pass}
       - POSTGRES_DB=zabbix
+    extra_hosts:
+      - host.docker.internal:host-gateway
     networks:
       - zabbix-net
     restart: always
