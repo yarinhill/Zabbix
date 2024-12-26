@@ -10,7 +10,7 @@ services:
     networks:
       - zabbix-net
     ports:
-      - "10050:10050"
+      - "10049:10049"
     restart: always
 networks:
   zabbix-net:
