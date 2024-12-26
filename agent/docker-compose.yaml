@@ -4,9 +4,9 @@ services:
     image: zabbix/zabbix-agent:alpine-7.0-latest
     container_name: zabbix-agent
     environment:
-      - ZBX_SERVER_HOST=192.168.1.253
-      - ZBX_HOSTNAME=my-zabbix-agent
-      - ZBX_LISTENPORT=10050
+      - ZBX_SERVER_HOST=${ZBX_SERVER_HOST}
+      - ZBX_HOSTNAME=${ZBX_AGENT_HOSTNAME}
+      - ZBX_LISTENPORT=${ZBX_AGENT_LISTENPORT}
     networks:
       - zabbix-net
     ports:
