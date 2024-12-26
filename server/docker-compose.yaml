@@ -35,6 +35,8 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-zabbix_pass}
       - POSTGRES_DB=zabbix
       - ZBX_ENABLE_SNMP_TRAPS="true"
+    extra_hosts:
+      - host.docker.internal:host-gateway
     networks:
       - zabbix-net
     ports:
@@ -55,8 +57,6 @@ services:
       - POSTGRES_DB=zabbix
     networks:
       - zabbix-net
-    extra_hosts:
-      - host.docker.internal:host-gateway
     ports:
       - "443:8443"
       - "8080:8080"
