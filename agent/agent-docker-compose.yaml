@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  zabbix-agent:
+    image: zabbix/zabbix-agent:alpine-7.0-latest
+    container_name: zabbix-agent
+    environment:
+      - ZBX_SERVER_HOST=192.168.1.253
+      - ZBX_HOSTNAME=my-zabbix-agent
+      - ZBX_LISTENPORT=10050
+    networks:
+      - zabbix-net
+    ports:
+      - "10050:10050"
+    restart: always
+networks:
+  zabbix-net:
+    name: zabbix-net
+    driver: bridge
