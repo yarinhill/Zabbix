@@ -6,7 +6,7 @@ read -p "Enter your OS Distribution (alma/rocky/rhel..): " OS_DISTRO
 read -p "Enter your OS Version (9,8..): " OS_VERSION
 
 # Install Zabbix repository
-sudo rpm -Uvh "https://repo.zabbix.com/zabbix/${ZABBIX_VERSION}.0/${OS_DISTRO}/${OS_VERSION}/x86_64/zabbix-release-latest-${ZABBIX_VERSION}.0.el${OS_VERSION}.noarch.rpm"
+sudo rpm -Uvh "https://repo.zabbix.com/zabbix/${ZABBIX_VERSION}/${OS_DISTRO}/${OS_VERSION}/x86_64/zabbix-release-latest-${ZABBIX_VERSION}.el${OS_VERSION}.noarch.rpm"
 if [ $? -ne 0 ]; then
     echo "Failed to add Zabbix repository. Please check your inputs and try again."
     exit 1
