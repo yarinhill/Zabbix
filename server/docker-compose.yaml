@@ -25,7 +25,7 @@ services:
       - "162:1162/udp"
     restart: always
 
-  #Postgres-Server
+  #Zabbix-Postgres-Server
   zabbix-server-pgsql:
     image: zabbix/zabbix-server-pgsql:alpine-7.0-latest
     container_name: zabbix-server-pgsql
@@ -67,9 +67,9 @@ services:
     image: zabbix/zabbix-agent2:alpine-7.0-latest
     container_name: zabbix-agent2
     environment:
-      - ZBX_SERVER_HOST=${ZBX_SERVER_HOST}
-      - ZBX_HOSTNAME=${ZBX_AGENT2_HOSTNAME}
-      - ZBX_LISTENPORT=${ZBX_AGENT2_LISTENPORT}
+      - ZBX_SERVER_HOST=zabbix-server-pgsql
+      - ZBX_HOSTNAME=${ZBX_AGENT2_HOSTNAME:-zabbix-agent2}
+      - ZBX_LISTENPORT=${ZBX_AGENT2_LISTENPORT:-10049}
     networks:
       - zabbix-net
     ports:
