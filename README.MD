@@ -1,4 +1,4 @@
- Zabbix Project
+# Zabbix Project
 
 ## 1.
 Make Sure to export the following environment variables on the server
