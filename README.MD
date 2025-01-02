@@ -23,7 +23,7 @@ docker-compose up -d
 
 ## 3.
 
-To view the the Zabbix Server Go to URL:
+To view the Zabbix Server Go to URL:
 
 ```
 http://localhost:8080
